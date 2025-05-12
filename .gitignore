@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Carpeta de compilación de Next.js
+.next/
+out/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configuraciones del editor
+.vscode/
+.idea/
+*.swp
+
+# Otros
+*.log
+*.tgz
+*.zip
+coverage/
