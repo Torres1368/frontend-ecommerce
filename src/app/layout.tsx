@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/footer";
 
 const urbanist = Urbanist({
   variable: "--font-geist-sans",
@@ -26,8 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.variable} ${geistMono.variable} antialiased`}>
-        <Navbar></Navbar>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
