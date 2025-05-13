@@ -6,7 +6,7 @@ import { ProductType } from "../../types/product";
 import { ResponseType } from "../../types/response";
 import SkeletonSchema from "./skeletonSchema";
 import { Card, CardContent } from "./ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import IconButton from "./icon-buttom";
 import { useRouter } from "next/navigation";
 
@@ -50,12 +50,21 @@ const FeaturedProducts = () =>{
                                             </div>
                                         </div>
                                     </CardContent>
+                                    <div className="flex justify-between gap-4 px-5">
+                                        <h3 className="text-lg font-bold">{nombre}</h3>
+                                        <div className="flex items-center justify-between gap-3">
+                                            <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">$ {precio}</p>
+                                        </div>
+
+                                    </div>
                                 </Card>
                             </div>
                         </CarouselItem>
                     );
                 })}
             </CarouselContent>
+            <CarouselPrevious/>
+            <CarouselNext className="hidden sm:flex"/>
         </Carousel>
     </div>
 );
