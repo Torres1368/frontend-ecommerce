@@ -1,15 +1,19 @@
 "use client"
 
+import { Expand, ShoppingCart } from "lucide-react";
 import { useGetFeaturedProducts } from "../../api/useGetFeaturedProducts";
 import { ProductType } from "../../types/product";
 import { ResponseType } from "../../types/response";
 import SkeletonSchema from "./skeletonSchema";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import IconButton from "./icon-buttom";
+import { useRouter } from "next/navigation";
 
 const FeaturedProducts = () =>{
     const {loading, result}:ResponseType= useGetFeaturedProducts();
-return (
+    const router = useRouter();
+    return (
     <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
         <h3 className="px-6 text-3xl sm:pb-8">Productos destacados</h3>
         <Carousel>
@@ -35,6 +39,16 @@ return (
                                         ) : (
                                             <span className="text-gray-400">Sin imagen</span>
                                         )}
+                                        <div className="absolute w-full px-6 transition duration-200 opacity-0 group-hover:opacity-100 bottom-5">
+                                            <div className="flex justify-center gap-x-6">
+                                                <IconButton onClick={() => router.push(`/products/${id}`)} icon={<Expand size={20}/>}
+                                                className="text-gray-600"/>
+
+                                                <IconButton onClick={() => console.log("agregar al carrito")} icon={<ShoppingCart size={20}/>}
+                                                className="text-gray-600"/>                                                   
+
+                                            </div>
+                                        </div>
                                     </CardContent>
                                 </Card>
                             </div>
