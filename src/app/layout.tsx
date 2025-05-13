@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={`${urbanist.variable} ${geistMono.variable} antialiased`}>
                   <ThemeProvider
             attribute="class"
