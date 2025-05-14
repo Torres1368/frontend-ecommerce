@@ -12,6 +12,7 @@ const BannerDiscount = () => {
                 <Link href="#" className={buttonVariants({variant: "outline"})}>Mas información</Link>
                 
             </div>
+            
         </div>
       );
 }
