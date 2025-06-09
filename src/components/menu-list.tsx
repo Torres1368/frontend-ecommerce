@@ -16,7 +16,7 @@ import {
 
 
 
-const  MenuList =() => {
+const MenuList = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -46,7 +46,7 @@ const  MenuList =() => {
               <ListItem href="/offers" title="Ofertas">
                 Seccion dedicada a promociones y descuestos especiales
               </ListItem>
-              <ListItem href="/" title="Accesorios">
+              <ListItem href="/category" title="Categorias">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
@@ -69,11 +69,11 @@ const  MenuList =() => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/accesorios" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink asChild>
+            <Link href="/" className={navigationMenuTriggerStyle()}>
               Accesorios
-            </NavigationMenuLink>
-          </Link>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
